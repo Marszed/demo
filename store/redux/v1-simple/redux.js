@@ -1,6 +1,6 @@
 const createStore = function (reducer) {
     const listeners = [] // 监听队列
-    let state = null // 数据源
+    let state // 数据源
 
     const getState = () => state // 获取数据
 
@@ -46,30 +46,33 @@ const reducer = (action = {}, state = { count: 0 }) => { // 根据不同的type�
  * 业务逻辑
  */
 
- (function() {
-     const initState = {
-         count: 0
-     }
-     const countDeleteBtn = document.querySelector('#countDelete')
-     const countAddBtn = document.querySelector('#countAdd')
-     const countContent = document.querySelector('#countContent')
+(function () {
+    const countDeleteBtn = document.querySelector('#countDelete')
+    const countAddBtn = document.querySelector('#countAdd')
+    const countContent = document.querySelector('#countContent')
 
-     const store = createStore(reducer)
+    const initState = {
+        count: 0
+    }
+    const store = createStore(reducer)
 
-     function appRender(state) {
-         contentRender(state)
-     }
+    function appRender(state) {
+        contentRender(state)
+    }
 
-     function contentRender({ count }) {
+    function contentRender({ count }) {
         countContent.innerHTML = count
-     }
-     
-     console.log(countAddBtn)
-     countAddBtn.onclick = function() {
-         store.dispatch({ type: 'ADD' })
-     }
+    }
 
-     appRender(store.getState())
+    countAddBtn.onclick = function () {
+        store.dispatch({ type: 'ADD' })
+    }
 
-     store.subscribe(() => appRender(store.getState()))
- })()
+    countDeleteBtn.onclick = function () {
+        store.dispatch({ type: 'DELETE' })
+    }
+
+    appRender(store.getState())
+
+    store.subscribe(() => appRender(store.getState()))
+})()
