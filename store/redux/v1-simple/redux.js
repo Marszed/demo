@@ -1,5 +1,5 @@
 const createStore = function (reducer) {
-    const listeners = [] // 监听队列
+    let listeners = [] // 监听队列
     let state // 数据源
 
     const getState = () => state // 获取数据
@@ -12,7 +12,9 @@ const createStore = function (reducer) {
     const subscribe = (fn) => {
         listeners.push(fn) // 添加订阅
 
-        const unSubscribe = () => listeners = listeners.filter(l => l !== fn) // 取消订阅
+        const unSubscribe = () => { // 取消订阅
+            listeners = listeners.filter(l => l !== fn)
+        }
 
         return unSubscribe
     }
@@ -34,9 +36,6 @@ const reducer = (action = {}, state = { count: 0 }) => { // 根据不同的type�
         case 'DELETE': return {
             count: state.count - 1
         }
-        case 'UPDATE': return {
-            count: state.count
-        }
         default:
             return state
     }
@@ -50,11 +49,16 @@ const reducer = (action = {}, state = { count: 0 }) => { // 根据不同的type�
     const countDeleteBtn = document.querySelector('#countDelete')
     const countAddBtn = document.querySelector('#countAdd')
     const countContent = document.querySelector('#countContent')
+    const disable = document.querySelector('#disable')
 
     const initState = {
         count: 0
     }
     const store = createStore(reducer)
+
+    appRender(store.getState())
+
+    const unSub = store.subscribe(() => appRender(store.getState()))
 
     function appRender(state) {
         contentRender(state)
@@ -72,7 +76,15 @@ const reducer = (action = {}, state = { count: 0 }) => { // 根据不同的type�
         store.dispatch({ type: 'DELETE' })
     }
 
-    appRender(store.getState())
-
-    store.subscribe(() => appRender(store.getState()))
+    disable.onclick = function () {
+        unSub()
+    }
 })()
+
+/**
+ * Note
+ * Redux: 一个状态容器(维护在js内存中-store)，提供可预测化的转改管理
+ * 通过 dispatch 不同的 action 动作触发状态修改
+ * reducer 接收旧的 state 与 action 返回新的 state
+ * 通过 subscribe，当触发 dispatch 时触发所有订阅者
+ */
