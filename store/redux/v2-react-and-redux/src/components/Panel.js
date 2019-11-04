@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import store from '../store';
-import actions from '../store/actions/theme';
+import React, {Component} from 'react'
+import store from '../store'
+import actions from '../store/actions/theme'
 
-window.store = store;
+window.store = store
 
 export default class Panel extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       color: store.getState().theme
     }
@@ -16,29 +16,29 @@ export default class Panel extends Component {
     this.unsub = store.subscribe(() => {
       this.setState({
         color: store.getState().theme
-      });
-    });
+      })
+    })
   }
 
   render() {
     return (
       <div id="main">
-        <div id="content" style={ this.state.color }> Panel changeColor</div>
+        <div id="content" style={this.state.color}> Panel changeColor</div>
         <button
           className="change-theme"
           id="to-blue"
-          onClick={ () => {
-            store.dispatch(actions.changeColor('rgb(0, 51, 254)'));
-          } }
+          onClick={() => {
+            store.dispatch(actions.changeColor('rgb(0, 51, 254)'))
+          }}
         >
           Blue
         </button>
         <button
           className="change-theme"
           id="to-pink"
-          onClick={ () => {
-            store.dispatch(actions.changeColor('rgb(247, 109, 132)'));
-          } }
+          onClick={() => {
+            store.dispatch(actions.changeColor('rgb(247, 109, 132)'))
+          }}
         >
           Pink
         </button>
@@ -47,6 +47,6 @@ export default class Panel extends Component {
   }
 
   componentWillUnmount() {
-    this.unsub();
+    this.unsub()
   }
 }

@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import Documentation from '~/components/documentation';
+import React, {Component} from 'react'
+import Documentation from '~/components/documentation'
 
 class Docs extends Component {
   state = {
-  };
+  }
   render() {
     return (
       <Documentation />
-    );
+    )
   }
 }
 
-export default Docs;
+export default Docs

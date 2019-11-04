@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import store from '../store'
 import actions from '../store/actions/counter'
 
@@ -23,18 +23,18 @@ export default class Counter extends Component {
       <div>
         <button
           className="counter"
-          onClick={ () => {
+          onClick={() => {
             store.dispatch(actions.add(2))
-          } }
+          }}
         >
           +
         </button>
         <span>{ this.state.number }</span>
         <button
           className="counter"
-          onClick={ () => {
+          onClick={() => {
             store.dispatch(actions.minus(2))
-          } }
+          }}
         >
           -
         </button>

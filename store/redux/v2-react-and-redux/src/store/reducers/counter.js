@@ -1,4 +1,4 @@
-import { COUNT_ADD, COUNT_MINUS } from '../action-types';
+import {COUNT_ADD, COUNT_MINUS} from '../action-types'
 
 export default function counter(state = { number: 0 }, action) {
   switch (action.type) {
@@ -7,7 +7,7 @@ export default function counter(state = { number: 0 }, action) {
         ...state,
         number: state.number + action.number
       }
-    case DECREMENT:
+    case COUNT_MINUS:
       return {
         ...state,
         number: state.number - action.number

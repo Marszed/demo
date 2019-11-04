@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
-import logo from '~/assets/logo.png';
+import React, {Component} from 'react'
+import logo from '~/assets/logo.png'
 
 class App extends Component {
   state = {
   }
   handleBrowserChange = () => {
-    const {history} = this.props;
-    history.push('/docs');
+    const {history} = this.props
+    history.push('/docs')
   }
   render() {
-    const {location: {pathname}} = this.props;
+    const {location: {pathname}} = this.props
     return (
       <div className="home" style={{paddingTop: 100}}>
         <div
@@ -25,8 +25,8 @@ class App extends Component {
           {this.props.children}
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
