@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            color: #000;
+        }
+        h1{
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+        h5{
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .container{
+            padding: 20px;
+        }
+    </style>
+    <style type="text/css">
+        /*三点骰子布局*/
+        .dice-box{
+            display: flex;
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-radius: 8px;
+            box-sizing: border-box;
+            border: 1px solid #D9D9D9;
+            padding: 20px;
+        }
+
+        .dice-box > span{
+            flex-basis: 30px;
+            height: 30px;
+            border-radius: 100%;
+            background-color: #000;
+        }
+
+        .dice-box > span:nth-child(2) {
+            align-self: center;
+        }
+
+        .dice-box > span:last-child {
+            align-self: flex-end;
+        }
+
+
+        /*导航条布局*/
+        .nav-box{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border: 1px solid #D9D9D9;
+            height: 40px;
+            width: 375px;
+            padding: 0 20px;
+            box-sizing: border-box;
+            background: linear-gradient(to right, #ff64b6 50%, #ffa088 0);
+            background-size: 100% 100%;
+        }
+        .nav-box > span:nth-child(2){
+            margin-left: 5px;
+            color: #1A1A1A;
+
+        }
+        .nav-box > span:last-child{
+            font-size: 16px;
+            font-weight: bold;
+            flex-grow: 2;
+            text-align: center;
+            padding-right: 41px;
+        }
+
+        /*item列表布局*/
+        .item-list{
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 375px;
+            margin-top: -10px;
+        }
+        .item-list>span{
+            flex-basis: 50%;
+            height: 100px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+        .item-list>span:nth-child(odd){
+            background-color: #ff64b6;
+            border-right: 5px solid #fff;
+        }
+        .item-list>span:nth-child(even){
+            background-color: #ffa088;
+            border-left: 5px solid #fff;
+        }
+
+        /*网格布局-固定宽度多列*/
+        .table-column{
+            display: flex;
+            height: 300px;
+        }
+        .table-column > span{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 20px;
+        }
+        .table-column > span:first-child{
+            background-color: #6161ff;
+            flex-basis: 200px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            margin-right: 20px;
+        }
+        .table-column > span:nth-child(2){
+            flex-shrink: 0;
+            background-color: #ff64b6;
+            flex-basis: 50%;
+        }
+        .table-column > span:last-child{
+            background-color: #ffa088;
+            flex-basis: 150px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            margin-left: 20px;
+        }
+
+        /*业务场景-商品内容展示布局*/
+        .complex-box{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 375px;
+            background-color: #6161ff;
+        }
+        .complex-box > .left{
+            width: 100px;
+            height: 100px;
+            background-color: #ffa088;
+            flex-shrink: 0;
+        }
+        .complex-box > .content{
+            margin-left: 10px;
+            flex-grow: 2;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: #ff64b6;
+        }
+        .complex-box > .content > p:first-child{
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-break: keep-all;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+<h1>Flex布局</h1>
+<!--三点骰子布局-->
+<div class="container">
+    <h5>三点骰子布局</h5>
+    <div style="display: flex">
+        <div class="dice-box">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="dice-box" style="margin-left: 20px">
+            <span style="align-self: flex-end"></span>
+            <span></span>
+            <span style="align-self: flex-start"></span>
+        </div>
+    </div>
+</div>
+<!--导航条布局-->
+<div class="container">
+    <h5>导航条布局</h5>
+    <div class="nav-box">
+        <span>&lt;</span>
+        <span>返回</span>
+        <span>我是标题</span>
+    </div>
+</div>
+<!--Item列表布局-->
+<div class="container">
+    <h5>Item列表布局</h5>
+    <div class="item-list">
+        <span>商品1</span>
+        <span>商品2</span>
+        <span>商品3</span>
+        <span>商品4</span>
+        <span>商品5</span>
+        <span>商品6</span>
+        <span>商品7</span>
+    </div>
+</div>
+<!--网格布局-固定宽度多列-->
+<div class="container">
+    <h5>网格布局-固定宽度多列</h5>
+    <div class="table-column">
+        <span>我是固定内容1</span>
+        <span>我是自适应内容</span>
+        <span>我是固定内容1</span>
+    </div>
+</div>
+<!--复杂布局-->
+<div class="container">
+    <h5>业务场景-商品内容展示布局</h5>
+    <div class="complex-box">
+        <div class="left">商品图1</div>
+        <div class="content">
+            <p>如何让我溢出一行省略号展示？如何让我溢出一行省略号展示？如何让我溢出一行省略号展示？如何让我溢出一行省略号展示？如何让我溢出一行省略号展示？</p>
+            <p>副标题</p>
+            <p>￥7899~7999</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
