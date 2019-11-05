@@ -9,10 +9,10 @@
 3. ssl 完整性保护`MAC(Message Authentication Code)摘要`
 
 ## https的安全通信机制 （图解HTTP版本）
-![https的安全通信机制](https://img.wzj.com/upload/pengyan/md/https4.png?x-oss-process=style/w1200)
-![SSL/TLS](https://img.wzj.com/upload/pengyan/md/ssl_password.jpg)
+![https的安全通信机制](image/https1.png)
+![SSL/TLS](image/ssl_password.jpg)
 ## SSL/TLS握手流程（IBM版本）
-![SSL/TLS](https://www.ibm.com/support/knowledgecenter/SSFKSJ_7.1.0/com.ibm.mq.doc/sy10660a.gif)
+![SSL/TLS](image/sy10660a.gif)
 [IBM知识库文档链接](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_7.1.0/com.ibm.mq.doc/sy10660_.htm)
 #### 备注：SYN 同步序列号、 ACK 确认字符
 
