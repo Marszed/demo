@@ -1,6 +1,6 @@
-import { CHANGE_COLOR } from '../action-types'
+import {CHANGE_COLOR} from '../action-types'
 
-export default function theme(state = { color: 'blue' }, action) {
+export default function theme(state = {color: 'blue'}, action) {
   switch (action.type) {
     case CHANGE_COLOR:
       return {

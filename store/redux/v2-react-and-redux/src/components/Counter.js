@@ -20,7 +20,7 @@ export default class Counter extends Component {
 
   render() {
     return (
-      <div>
+      <div className="btn-box-counter">
         <button
           className="counter"
           onClick={() => {

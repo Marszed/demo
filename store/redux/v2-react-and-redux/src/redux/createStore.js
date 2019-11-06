@@ -13,7 +13,7 @@ export default function createStore(reducer) {
   const getState = () => state // 获取数据
 
   const dispatch = action => { // 数据变更
-    state = reducer(action, state) // 根据action.type派发数据变更行为
+    state = reducer(state, action) // 根据action.type派发数据变更行为
     listeners.forEach(fn => fn()) // 通知订阅
   }
 
@@ -25,7 +25,7 @@ export default function createStore(reducer) {
     }
   }
 
-  dispatch({ type: `@@redux/__INIT__${Math.random()}` }) // 触发一个几乎不可能的action, 得到初始state
+  dispatch({type: `@@redux/__INIT__${Math.random()}`}) // 触发一个几乎不可能的action, 得到初始state
 
   return {
     getState,
