@@ -9,5 +9,6 @@ export default function compose(...funcs) {
     return funcs[0]
   }
 
+  // [a, b, c] =>  a(b(c(next)))
   return funcs.reduce((prev, current) => (...args) => prev(current(...args)))
 }

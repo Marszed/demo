@@ -33,3 +33,9 @@ export default function createStore(reducer) {
     subscribe
   }
 }
+
+// creatStore 包含的四个部分
+// getState 获取最新的state
+// dispatch 派发action至reducer，计算最新的state
+// subscribe 实现订阅功能，每次触发 dispatch 的时候，会执行订阅函数
+// replaceReducer 替换 reducer 函数, 按需加载的时候，reducer也可以跟着组件在必要的时候再加载，然后用新的 reducer 替换老的 reducer。
