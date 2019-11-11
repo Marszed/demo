@@ -21,8 +21,10 @@ demo
 │       │───mobox
 │       │───vux
 │   
-└───folder2
-    │   file021.txt
-    │   file022.txt
+└───js
+    │   debouce.js
+    │   throttle.js
+    │   deepCoyp.js
+    │   shallowCopy.js
 ```
 
