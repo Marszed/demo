@@ -26,5 +26,6 @@ demo
     │   throttle.js
     │   deepCoyp.js
     │   shallowCopy.js
+    │   promise.js
 ```
 
