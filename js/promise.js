@@ -26,7 +26,7 @@ class MyPromise {
     }
   }
 
-  // 添加resovle时执行的函数
+  // 添加resolve时执行的函数
   _resolve(val) {
     const run = () => {
       if (this._status !== PENDING) return
@@ -74,8 +74,9 @@ class MyPromise {
     const run = () => {
       this._status = REJECTED
       this._value = err
-      let cb;
-      while (cb = this._rejectedQueues.shift()) {
+      let cb = this._rejectedQueues.shift();
+      while (cb) {
+        cb = this._rejectedQueues.shift()
         cb(err)
       }
     }
@@ -190,11 +191,7 @@ class MyPromise {
     return new MyPromise((resolve, reject) => {
       for (let p of list) {
         // 只要有一个实例率先改变状态，新的MyPromise的状态就跟着改变
-        this.resolve(p).then(res => {
-          resolve(res)
-        }, err => {
-          reject(err)
-        })
+        this.resolve(p).then(res => resolve(res), err => reject(err))
       }
     })
   }
@@ -202,9 +199,9 @@ class MyPromise {
   finally(cb) {
     return this.then(
       value => MyPromise.resolve(cb()).then(() => value),
-      reason => MyPromise.resolve(cb()).then(() => {
-        throw reason
-      })
+      reason => MyPromise.resolve(cb()).then(() => (throw reason))
     );
   }
 }
+
+export default MyPromise
