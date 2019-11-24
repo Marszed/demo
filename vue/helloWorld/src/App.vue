@@ -27,3 +27,9 @@
       },
     }
 </script>
+
+<style scoped>
+    .container {
+        background-color: #bfbfbf;
+    }
+</style>
