@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grid</title>
+    <style type="text/css">
+        body {
+            background-color: #dfdfdf;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul, ol {
+            list-style: none;
+        }
+
+        .grid-box{
+            padding: 0 20px;
+        }
+
+        .grid-list{
+            display: grid;
+            grid-template-columns: 3fr;
+            grid-template-rows: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<h5>间距固定、内容自适应宽度</h5>
+<div class="grid-box">
+    <ul class="grid-list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+</body>
+</html>
