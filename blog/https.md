@@ -12,7 +12,7 @@
 ![https的安全通信机制](https://github.com/Marszed/demo/blob/master/img/https_1.png)
 ![SSL/TLS](https://github.com/Marszed/demo/blob/master/img/https_ssl.jpg)
 ## SSL/TLS握手流程（IBM版本）
-![SSL/TLS](https://github.com/Marszed/demo/blob/master/img/https_ssl2.gif)
+![SSL/TLS](https://github.com/Marszed/demo/blob/master/img/https_ssl2.jpg)
 [IBM知识库文档链接](https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_7.1.0/com.ibm.mq.doc/sy10660_.htm)
 #### 备注：SYN 同步序列号、 ACK 确认字符
 
