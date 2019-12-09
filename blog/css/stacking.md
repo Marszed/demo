@@ -32,5 +32,5 @@
 - contain 属性值为 layout、paint 或包含它们其中之一的合成值（比如 contain: strict、contain: content）的元素。
 
 #### 层叠顺序
-![层叠顺序](https://github.com/Marszed/demo/blob/master/img/stacking_context.jpg)
+![层叠顺序](https://github.com/Marszed/demo/blob/master/img/stacking_context.png)
 
