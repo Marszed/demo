@@ -35,7 +35,7 @@ const {
   if (output) return output
   output = compiler.parseComponent(source, compilerParseOptions)
 ```
-![vue-loader](https://github.com/Marszed/demo/blob/master/img/WechatIMG1.png)
+![vue-loader](https://github.com/Marszed/demo/blob/master/img/vue_loader_compile.png)
 
 3. Vue.prototype.$mount Api
 - 执行mount时，若`render`方法不存在会将`template`进行`compileToFunctions`运行时编译得到`render`与`staticRenderFns`。`render`返回的是VNode节点供渲染以及update的时候进行patch
