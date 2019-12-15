@@ -1,6 +1,6 @@
 #### js继承实现方式优劣
 ##### 利用构造函数实现继承
-1. 构造函数绑定
+1. 构造函数绑定<借用构造函数继承>
 ```javascript
 function Parent() {
   this.species = 'Parent'
@@ -14,7 +14,7 @@ function Child (name){
 var child = new Child('张三')
 // 弊端：若目标对象拥有引用类型的值，会存在污染目标对象的问题，Paren每次都需要执行
 ```
-2. prototype模式
+2. prototype模式<原型链继承>
 ```javascript
 function Parent() {
   this.species = 'Parent'
