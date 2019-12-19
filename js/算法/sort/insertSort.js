@@ -14,6 +14,6 @@ function selectSort(arr) {
   }
 }
 
-const testData = [1,3,7,2,7,9]
+const testData = [1, 3, 7, 2, 7, 9]
 
 console.log(selectSort(testData))

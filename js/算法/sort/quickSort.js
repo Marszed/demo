@@ -23,6 +23,6 @@ function quickSort(array) {
   return [...quickSort(left), midValue, ...quickSort(right)]
 }
 
-const testData = [1,3,7,2,7,9]
+const testData = [1, 3, 7, 2, 7, 9]
 
 console.log(quickSort(testData))

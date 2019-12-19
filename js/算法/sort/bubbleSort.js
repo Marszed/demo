@@ -5,7 +5,7 @@ function bubbleSort(array) {
     return false
   }
   for (var i = 0, len = array.length; i < len; i++) {
-    for (var j = i + 1; j < len - 1; j ++) {
+    for (var j = i + 1; j < len - 1; j++) {
       if (array[i] > array[j]) {
         const temp = array[i]
         array[i] = array[j]
@@ -17,6 +17,6 @@ function bubbleSort(array) {
 }
 
 
-const testData = [1,3,7,2,7,9]
+const testData = [1, 3, 7, 2, 7, 9]
 
 console.log(bubbleSort(testData))
